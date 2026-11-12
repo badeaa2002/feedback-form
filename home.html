@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Feedback</title>
+</head>
+<body>
+        <div class="container">
+            <div class="side-content">
+                <h1>Client Feedback form</h1>
+                <p>Help me improve my work by sharing your experience with the project we worked on together</p>
+            </div>
+            <div class="main-content">
+                <h1>Project feedback</h1>
+                <form>
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" name="name" placeholder="enter your name">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" name="email" placeholder="enter your email">
+                  
+                    <label for="project">Project name:</label>
+                    <input id="project" type="text" name="project" placeholder="enter the project name">
+                  
+                    <label for="rate">How was your overall experience?</label>
+                    <select id="rate" name="rate">
+                        <option></option>
+                        <option value="excellent">Excellent</option>
+                        <option value="Very Good">Very Good</option>
+                        <option value="Good">Good</option>
+                        <option value="Fair">Fair</option>
+                        <option value="Poor">Poor</option>
+                    </select>
+              <div class="form-group">
+                <fieldset class="radio-section">
+                    <legend>Was the project delivered on time?</legend>
+                    <div class="radio-group">
+                        <label><input type="radio" name="delivery" value="yes"> Yes</label>
+                        <label><input type="radio" name="delivery" value="partially"> Partially</label>
+                        <label><input type="radio" name="delivery" value="no"> No</label>
+                    </div>
+                </fieldset>
+                <fieldset class="radio-section">
+                    <legend>Would you recommend me to a friend?</legend>
+                    <div class="radio-group">
+                        <label><input type="radio" name="recommend" value="yes"> Yes</label>
+                        <label><input type="radio" name="recommend" value="maybe"> Maybe</label>
+                        <label><input type="radio" name="recommend" value="no"> No</label>
+                    </div>
+                </fieldset>
+
+               </div>
+              <label for="comment">Additional comment:</label>
+              <textarea id="comment" name="comment" placeholder="share your feedback or any thoughts..."></textarea>
+                  
+              <div class="btn">
+                    <button class="btn__button btn__button--submit" type="submit">Submit feedback</button>
+                    <button class="btn__button btn__button--restrat " >Reset</button>
+             </div>
+                    
+         </form>
+    </div>
+
+ </div>
+ 
+</body>
+</html>

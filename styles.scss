@@ -1,0 +1,197 @@
+
+$primary-color: #75449ad4;
+$muted-purple: #55316fa1;
+$soft-color: #E9DDF2;
+$medium-color: #C7A9DF;
+$background-color: #F8F5FB;
+$text-color: #39313F;
+$white: #FFFFFF;
+
+%center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex-style($justify: space-between, $gap: 20px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: $justify;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin form-input {
+    margin-bottom: 24px;
+    width: 70%;
+    padding: 12px;
+    border: 1px solid $medium-color;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: $white;
+    transition: 0.3s ease;
+
+    &:focus {
+        border-color: darken($primary-color, 10%);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #999;
+    }
+
+    &:hover {
+        border-color: $primary-color;
+    }
+}
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    padding: 20px;
+    font-family: Georgia, serif;
+}
+
+.container {
+    background-color: $soft-color;
+    width: 70%;
+    min-height: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    @extend %center;
+    @include flex-style($gap: 40px);
+    align-items: stretch;
+
+    .side-content {
+        background-color: $muted-purple;
+        width: 20%;
+        padding: 30px;
+        color: $white;
+        border-radius: 8px;
+        text-align: start;
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            margin-top:150px;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 4px;
+                background-color: $medium-color;
+                margin-top: 15px;
+                border-radius: 5px;
+            }
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 20px;
+
+        h1 {
+            font-size: 32px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: $text-color
+        }
+    }
+}
+
+input:not([type="radio"]),
+select,
+textarea {
+    @include form-input;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+select {
+    cursor: pointer;
+}
+
+.form-group {
+    @include flex-style($justify: flex-start, $gap: 15px);
+    align-items: flex-start;
+    margin-bottom: 10px;
+
+    .radio-group {
+        @include flex-style($justify: flex-start, $gap: 12px);
+        flex-wrap: wrap;
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin: 0;
+            accent-color: $primary-color;
+            cursor: pointer;
+        }
+    }
+
+    fieldset {
+        border: 1px solid $medium-color;
+        border-radius: 8px;
+        padding: 12px;
+        background-color: rgba($white, 0.4);
+
+        legend {
+            color: $text-color;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+    }
+}
+
+.btn {
+    @include flex-style($justify: center, $gap: 20px);
+
+    &__button {
+        padding: 5px;
+        width: 40%;
+        @extend %center;
+        border: 1px solid $primary-color;
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s ease;
+        background-color: $white;
+
+        &:hover {
+            background-color: lighten($primary-color, 50%);
+            color: $text-color;
+            transform: translateY(-2px);
+        }
+
+        &--submit {
+            background-color: $primary-color;
+            color: $white;
+
+        }
+
+        }
+    }
+
+
